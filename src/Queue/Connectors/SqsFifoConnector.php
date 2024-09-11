@@ -27,7 +27,13 @@ class SqsFifoConnector extends SqsConnector
         }
 
         if (!empty($config['key']) && !empty($config['secret'])) {
-            $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+//            $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+            $config['credentials'] =
+                [
+                    'key' => $config['key'],
+                    'secret' => $config['secret'],
+                    'token' => $config['token']['token']
+                ];
         }
 
         // Pull the custom config options out of the config array sent to SqsClient.

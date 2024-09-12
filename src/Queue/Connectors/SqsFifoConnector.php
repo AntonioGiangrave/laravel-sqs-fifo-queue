@@ -32,7 +32,7 @@ class SqsFifoConnector extends SqsConnector
                 [
                     'key' => $config['key'],
                     'secret' => $config['secret'],
-                    'token' => $config['token']['token']
+                    'token' => isset($config['token']['token']) ?? null
                 ];
         }
 

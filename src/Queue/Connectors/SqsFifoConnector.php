@@ -28,11 +28,14 @@ class SqsFifoConnector extends SqsConnector
 
         if (!empty($config['key']) && !empty($config['secret'])) {
 //            $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+
+            $token = isset($config['token']['token']) ? $config['token']['token'] : null;
+
             $config['credentials'] =
                 [
                     'key' => $config['key'],
                     'secret' => $config['secret'],
-                    'token' => isset($config['token']['token']) ?? null
+                    'token' => $token
                 ];
         }
 

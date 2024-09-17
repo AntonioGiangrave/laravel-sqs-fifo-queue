@@ -36,6 +36,8 @@ class SqsFifoConnector extends SqsConnector
                 ];
         }
 
+        Log::info(json_encode($config));
+
         // Pull the custom config options out of the config array sent to SqsClient.
         $group = Arr::pull($config, 'group', 'default');
         $deduplicator = Arr::pull($config, 'deduplicator', 'unique');

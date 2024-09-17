@@ -37,6 +37,9 @@ class SqsFifoConnector extends SqsConnector
                     'secret' => $config['secret'],
                     'token' => $token
                 ];
+
+            die($config);
+
         }
 
         // Pull the custom config options out of the config array sent to SqsClient.
